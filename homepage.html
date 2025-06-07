@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <style>
+        body{
+            padding:30px;
+            background:linear-gradient(to right, #e2e2e2, #c9d6ff);
+        }
+        h1{
+            text-align:center;
+
+        }
+        button{
+            color:blueviolet;
+            background-color:#c9d6ff;
+            padding:5px;
+            border-radius:5px;
+            font-size:1rem;
+            font-weight:bold;
+            border:none;
+        }
+        button:hover{
+            text-decoration: underline;
+            color:blue;
+        }
+        button, div{
+            margin-left:15%;
+            font-size:20px;
+            padding:10px;
+        }
+        div{
+            font-weight:400;
+            color:rgb(12,11,11);
+
+        }
+        span{
+            font-weight:600;
+            font-size:22px;
+            color:black;
+        }
+        #container{
+            display: flex;
+        }
+        .question-container {
+      display: none;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .options label {
+      display: block;
+      margin: 8px 0;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .wrong {
+      color: red;
+    }
+
+    .explanation {
+      display: none;
+      color: #555;
+      font-style: italic;
+      margin-top: 5px;
+    }
+
+    #navigation {
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-right: 10px;
+    }
+
+    #score-container {
+      display: none;
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    .score-status{
+      color: blue; 
+      font-weight: bold;
+    }
+    </style>
+    <script type="module" src="./homepage.js"></script>
+</head>
+<body>
+     <h1>Welcome to the Homepage</h1>
+    <div id="container">
+       
+    <div>First Name: <span id="loggedUserFName"></span></div>
+    <div>Last Name: <span id="loggedUserLName"></span></div>
+    <div>Email: <span id="loggedUserEmail"></span></div>
+    </div>
+    <!-- <div >Password: <span id="loggedUserPassword"></span></div> -->
+     <h1>Questions</h1>
+
+     <div id="quiz">
+
+    <div class="question-container active">
+      <h3>1. What is the capital of France?</h3>
+      <div class="options">
+        <label><input type="radio" name="q0" value="A"> A) Paris</label>
+        <label><input type="radio" name="q0" value="B"> B) Berlin</label>
+        <label><input type="radio" name="q0" value="C"> C) Madrid</label>
+        <label><input type="radio" name="q0" value="D"> D) Rome</label>
+      </div>
+      <div class="result"></div>
+      <div class="explanation">Paris is the capital of France.</div>
+      <p class="score-status"></p>
+
+    </div>
+
+    <div class="question-container">
+      <h3>2. What is the capital of Germany?</h3>
+      <div class="options">
+        <label><input type="radio" name="q1" value="A"> A) Vienna</label>
+        <label><input type="radio" name="q1" value="B"> B) Berlin</label>
+        <label><input type="radio" name="q1" value="C"> C) Zurich</label>
+        <label><input type="radio" name="q1" value="D"> D) Munich</label>
+      </div>
+      <div class="result"></div>
+      <div class="explanation">Berlin is the capital of Germany.</div>
+      <p class="score-status"></p>
+
+    </div>
+
+    <div class="question-container">
+      <h3>3. What is the capital of Spain?</h3>
+      <div class="options">
+        <label><input type="radio" name="q2" value="A"> A) Barcelona</label>
+        <label><input type="radio" name="q2" value="B"> B) Seville</label>
+        <label><input type="radio" name="q2" value="C"> C) Madrid</label>
+        <label><input type="radio" name="q2" value="D"> D) Valencia</label>
+      </div>
+      <div class="result"></div>
+      <div class="explanation">Madrid is the capital of Spain.</div>
+      <p class="score-status"></p>
+
+    </div>
+
+    <div class="question-container">
+      <h3>4. What is the capital of Italy?</h3>
+      <div class="options">
+        <label><input type="radio" name="q3" value="A"> A) Milan</label>
+        <label><input type="radio" name="q3" value="B"> B) Rome</label>
+        <label><input type="radio" name="q3" value="C"> C) Naples</label>
+        <label><input type="radio" name="q3" value="D"> D) Venice</label>
+      </div>
+      <div class="result"></div>
+      <div class="explanation">Rome is the capital of Italy.</div>
+      <p class="score-status"></p>
+
+    </div>
+
+    <div class="question-container">
+      <h3>5. What is the capital of Ethiopia?</h3>
+      <div class="options">
+        <label><input type="radio" name="q4" value="A"> A) Dire Dawa</label>
+        <label><input type="radio" name="q4" value="B"> B) Addis Ababa</label>
+        <label><input type="radio" name="q4" value="C"> C) Mekelle</label>
+        <label><input type="radio" name="q4" value="D"> D) Gondar</label>
+      </div>
+      <div class="result"></div>
+      <div class="explanation">Addis Ababa is the capital of Ethiopia.</div>
+      <p class="score-status"></p>
+    </div>
+
+  </div>
+
+  <div id="navigation">
+   <button id="prevBtn">Back</button>
+<button id="nextBtn">Next</button>
+<button id="submitBtn">Submit</button>
+
+  </div>
+
+  <div id="score-container"></div>
+    <button id="logout">Logout</button>
+</body>
+</html>
